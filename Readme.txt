@@ -1,0 +1,1 @@
+Choosing a dummy location that similar to user.
