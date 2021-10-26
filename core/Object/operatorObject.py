@@ -1,13 +1,13 @@
 """
 =====================================================
-|	Contain the operator with object 				|
-|													|
-|	addObject(a: dict, b: dict) -> dict				|
-|	minusObject(a: dict, b: dict) -> dict			|
-|	countObjectElements(a: dict) -> int 			|
-|	percentObject(a: dict) -> dict					|
-|	sortObject(a: dict, ord : int = 1) -> dict 		|
-|													|
+|	Contain the operator with object
+|
+|	addObject(a: dict, b: dict) -> dict
+|	minusObject(a: dict, b: dict) -> dict
+|	countObjectElements(a: dict) -> int
+|	percentObject(a: dict) -> dict
+|	sortObject(a: dict, ord : int = 1) -> dict
+|
 =====================================================
 """
 
