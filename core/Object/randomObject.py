@@ -1,6 +1,14 @@
-import random
+"""
+=====================================================
+|	Random number of elements in one object
+|
+|	getRandomValue() -> dict
+|
+=====================================================
+"""
 
 def getRandomValue() -> dict:
+	import random
 	
 	ret = {}
 	for i in range(10):
