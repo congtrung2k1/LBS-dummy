@@ -4,7 +4,7 @@
 |
 |	addObject(a: dict, b: dict) -> dict
 |	minusObject(a: dict, b: dict) -> dict
-|	countObjectElements(a: dict) -> int
+|	countObject(a: dict) -> int
 |	percentObject(a: dict) -> dict
 |	sortObject(a: dict, ord : int = 1) -> dict
 |
@@ -32,7 +32,7 @@ def minusObject(a: dict, b: dict) -> dict:
 
 
 # Counting the number of element of object
-def countObjectElements(a: dict) -> int:
+def countObject(a: dict) -> int:
 	cnt = 0
 
 	for i in range(10):
@@ -43,7 +43,7 @@ def countObjectElements(a: dict) -> int:
 
 # Calculate percent of all elements on object
 def percentObject(a: dict) -> dict:
-	cnt = countObjectElements(a)
+	cnt = countObject(a)
 
 	ret = {}
 
