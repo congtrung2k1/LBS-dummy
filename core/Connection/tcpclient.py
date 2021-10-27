@@ -1,6 +1,6 @@
 """
 =====================================================
-|	Random number of elements in one object
+|	TCP of user send location to server and receive dummy location
 |
 |	sendLocation(X: int, Y: int) -> list
 |

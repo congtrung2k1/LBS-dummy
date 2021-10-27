@@ -1,6 +1,6 @@
 """
 =====================================================
-|   Random number of elements in one object
+|   TCP of user receive dummy location to server and send location
 |
 |   ServerOn()
 |
