@@ -97,7 +97,7 @@ class Shape():
 		while 1:
 			# random choice a cell in remaining choice
 			import random
-			r = tmp[random.randint(0, len(c) - 1)]
+			r = tmp[random.randint(0, c - 1)]
 
 			a = r // self.level 		# get x of row in user shape
 			b = r % self.level 			# get y of column in user shape
@@ -139,12 +139,12 @@ class Shape():
 # 	print(ggmap.userShapeTopX, ggmap.userShapeTopY, ggmap.userShapeBotX, ggmap.userShapeBotY)
 # 	print(ggmap.userShape)
 
-# 	ggmap.changeUserLocation(9, 9)
-# 	print(ggmap.userShapeTopX, ggmap.userShapeTopY, ggmap.userShapeBotX, ggmap.userShapeBotY)
-# 	print(ggmap.userShape)
+# 	# ggmap.changeUserLocation(9, 9)
+# 	# print(ggmap.userShapeTopX, ggmap.userShapeTopY, ggmap.userShapeBotX, ggmap.userShapeBotY)
+# 	# print(ggmap.userShape)
 
 # 	for i in range(1, ggmap.maxN):
 # 		for j in range(1, ggmap.maxM):
 # 			print(i, j, ggmap.table[i][j])
-# 			input()
+# 			# input()
 

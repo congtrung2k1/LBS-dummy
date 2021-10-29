@@ -17,7 +17,7 @@ def sendLocation(X: int, Y: int) -> list:
 
 	loc = f'{str(X)}-{str(Y)}'
 	s.send(loc.encode())
-	recv = s.recv(1024).decode()
+	loc = s.recv(1024).decode()
  
 	s.close()
 
