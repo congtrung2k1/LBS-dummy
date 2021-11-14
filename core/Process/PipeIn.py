@@ -2,11 +2,12 @@
 =================================================================
 |	From here, call all the processing and filter.
 |
-|	processStart(x: int, y: int) -> list
+|	processStart(ggmap) -> list
 |	
 |
 =================================================================
 """
+
 import os
 import sys
 
@@ -16,34 +17,20 @@ from Shape.classShape import Shape
 from Object.operatorObject import percentObject
 
 
-ggmap = 0
+
+def processStart(ggmap) -> list:
+	from firstFilter import firstFilter
+
+	firstFilter(ggmap)
 
 
-def processStart(x: int, y: int) -> list:
-
-	userShape = ggmap.getShape(x, y)
-
-	print(userShape)
-
+	print(ggmap.userShape)
+	print(ggmap.userElementObject)
+	print(len(ggmap.firstList))
+	print(ggmap.firstList)
 
 
-
-	return [x, y]
-
-
-def placeShape(x: int, y: int, level : int = 3) -> list:
-	c = n*n - 1
-
-	while 1:
-		import random
-		r = randint(1, c)
-
-		a = r // n
-		b = r % n
-
-		if 0 < x + a < ggmap.maxN && 0 < y + b < ggmap.maxM: break
-
-	 
+	return []
 
 
 
@@ -53,7 +40,9 @@ def placeShape(x: int, y: int, level : int = 3) -> list:
 # Debug only
 if __name__ == "__main__":
 
-	ggmap = Shape()
+	userX = 10
+	userY = 11
+	ggmap = Shape(userX, userY)
 
-	processStart(10, 11)
+	processStart(ggmap)
 
