@@ -2,11 +2,12 @@
 =================================================================
 |	From here, call all the processing and filter.
 |
-|	processStart(x: int, y: int) -> list
+|	processStart(ggmap) -> list
 |	
 |
 =================================================================
 """
+
 import os
 import sys
 
@@ -16,13 +17,20 @@ from Shape.classShape import Shape
 from Object.operatorObject import percentObject
 
 
-ggmap = 0
+
+def processStart(ggmap) -> list:
+	from firstFilter import firstFilter
+
+	firstFilter(ggmap)
 
 
-def processStart(x: int, y: int) -> list:
+	print(ggmap.userShape)
+	print(ggmap.userElementObject)
+	print(len(ggmap.firstList))
+	print(ggmap.firstList)
 
 
-	return [x, y]	 
+	return []
 
 
 
@@ -32,7 +40,9 @@ def processStart(x: int, y: int) -> list:
 # Debug only
 if __name__ == "__main__":
 
-	ggmap = Shape(10, 11)
+	userX = 10
+	userY = 11
+	ggmap = Shape(userX, userY)
 
-	processStart(10, 11)
+	processStart(ggmap)
 

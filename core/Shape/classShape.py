@@ -35,6 +35,12 @@ class Shape():
 		self.userShape = {}
 		self.userShapeTopX, self.userShapeTopY, self.userShapeBotX, self.userShapeBotY = 0, 0, 0, 0
 
+		# Shape Filter
+		self.userElementObject = {}
+		self.firstList = [] 
+		self.secondList = []
+		self.thirdList = []
+
 		# Initialize the map
 		self.initTable()		
 		self.calcAllShape()
@@ -43,7 +49,6 @@ class Shape():
 
 	# Create the table with random object
 	def initTable(self) -> None:
-
 		# row 0
 		tmp = [zeroObject() for i in range(self.maxM)]
 		self.table.append(tmp)
