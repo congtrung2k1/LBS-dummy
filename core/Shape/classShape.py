@@ -6,10 +6,9 @@
 |	initTable(self) -> None
 |	calcAllShape(self) -> None
 |	getShape(self, x: int, y: int, level: int = 3) -> dict
+|	placeUserShape(self) -> None
 |	changeLevel(self, level: int) -> None
 |	changeUserLocation(self, x: int, y: int) -> None
-|	placeUserShape(self) -> None
-|	
 |
 =================================================================
 """
@@ -32,14 +31,23 @@ class Shape():
 		self.userX = userX
 		self.userY = userY
 		self.level = level
+		self.prelv = level
 		self.userShape = {}
-		self.userShapeTopX, self.userShapeTopY, self.userShapeBotX, self.userShapeBotY = 0, 0, 0, 0
+		self.userShapeBotX, self.userShapeBotY = 0, 0
+
+		# Dummy location
+		self.dummyX = 1
+		self.dummyY = 1
 
 		# Shape Filter
 		self.userElementObject = {}
 		self.firstList = [] 
 		self.secondList = []
 		self.thirdList = []
+
+		# Saved state
+		# [ [X,Y], [dummyX,dummyY], [level], [userShapeBotX, userShapeBotY] ]
+		self.memorized = []
 
 		# Initialize the map
 		self.initTable()		
@@ -115,8 +123,6 @@ class Shape():
 			# remove the cell order choice if not satisfied
 			tmp.remove(r)
 
-		self.userShapeTopX = self.userX - a
-		self.userShapeTopY = self.userY - b
 		self.userShapeBotX = self.userX + (self.level - 1 - a)
 		self.userShapeBotY = self.userY + (self.level - 1 - b)
 
@@ -125,7 +131,8 @@ class Shape():
 
 	# Privacy level of user change
 	def changeLevel(self, level: int) -> None:
-		self.level = 4
+		self.prelv = self.level
+		self.level = level
 		self.placeUserShape()
 
 
@@ -133,7 +140,6 @@ class Shape():
 	def changeUserLocation(self, x: int, y: int) -> None:
 		self.userX = x
 		self.userY = y
-		self.placeUserShape()
 
 
 
