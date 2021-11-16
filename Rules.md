@@ -15,7 +15,7 @@
 	> 
 	> There are 10 Objects type inside, no. from 0 to 9
 	> 
-	> The number of existed object of each cell is from 2 to 10
+	> The number of existed object of each cell is from 2 to (number of object / 3)
 	> 
 	> Each Object have value from 1 or 2
 
