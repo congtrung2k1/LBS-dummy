@@ -5,7 +5,6 @@
 |	newDummyLocation(x: int, y: int) -> list [ggmap, [dummyX, dummyY]]
 |	nextDummyLocation(ggmap: object, x: int, y: int) -> list [dummyX, dummyY]
 |	changeDummyLevel(level: int) -> list [dummyX, dummyY]
-|	addingToMemory(ggmap: object) -> None
 |
 =================================================================
 """
