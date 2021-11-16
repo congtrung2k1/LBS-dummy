@@ -46,7 +46,7 @@ class Shape():
 		self.thirdList = []
 
 		# Saved state
-		# [ [X,Y], [dummyX,dummyY], [level], [userShapeBotX, userShapeBotY] ]
+		# [ [X,Y], [dummyX,dummyY], level, [userShapeBotX, userShapeBotY] ]
 		self.memorized = []
 
 		# Initialize the map
