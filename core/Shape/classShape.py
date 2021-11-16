@@ -7,7 +7,7 @@
 |	calcAllShape(self) -> None
 |	getShape(self, x: int, y: int, level: int = 3) -> dict
 |	placeUserShape(self) -> None
-|	changeLevel(self, level: int) -> None
+|	changeLevel(self, level: int) -> bool
 |	changeUserLocation(self, x: int, y: int) -> None
 |
 =================================================================
@@ -31,7 +31,6 @@ class Shape():
 		self.userX = userX
 		self.userY = userY
 		self.level = level
-		self.prelv = level
 		self.userShape = {}
 		self.userShapeBotX, self.userShapeBotY = 0, 0
 
@@ -130,16 +129,39 @@ class Shape():
 
 
 	# Privacy level of user change
-	def changeLevel(self, level: int) -> None:
-		self.prelv = self.level
+	def changeLevel(self, level: int) -> bool:
 		self.level = level
+
+		for pair in ggmap.memorized:
+			# Check the privacy level first
+			if pair[2] == ggmap.level:
+				# Return to the previous position
+				if pair[0] == [ggmap.userX, ggmap.userY]:
+					ggmap.dummyX = pair[1][0]
+					ggmap.dummyY = pair[1][1]		
+					ggmap.userShapeBotX = pair[3][0]
+					ggmap.userShapeBotY = pair[3][1]
+					return True
+
+				else:
+					# Return to the previous userShape
+					lvl, tmpx, tmpy = pair[2], pair[3][0], pair[3][1]
+					
+					if tmpx - lvl + 1 <= x <= tmpx and tmpy - lvl + 1 <= y <= tmpy:
+						ggmap.dummyX = pair[1][0]
+						ggmap.dummyY = pair[1][1]		
+						ggmap.userShapeBotX = tmpx
+						ggmap.userShapeBotY = tmpy
+						return True
+
+		# if the position does not have any data in database, create new
 		self.placeUserShape()
+		return False
 
 
 	# Location of user change
 	def changeUserLocation(self, x: int, y: int) -> None:
-		self.userX = x
-		self.userY = y
+		self.userX, self.userY = x, y
 
 
 

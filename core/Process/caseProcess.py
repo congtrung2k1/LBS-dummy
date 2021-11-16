@@ -59,8 +59,13 @@ def nextDummyLocation(ggmap: object, x: int, y: int) -> list: 	# [dummyX, dummyY
 
 
 # This occurs when user change privacy level
-def changeDummyLevel(level: int = 4) -> list: 	# [dummyX, dummyY]
-	ggmap.changeLevel(level)
+# Check is that situation is occursed
+def changePrivacyLevel(level: int = 4) -> list: 	# [dummyX, dummyY]
+	existed = ggmap.changeLevel(level)
+
+	if existed:
+		return [ggmap.dummyX, ggmap.dummyY]
+
 	loc = locationFilter(ggmap)
 	addingToMemory(ggmap)
 	return loc
