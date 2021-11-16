@@ -10,12 +10,12 @@
 
 from socket import *
 
-def sendLocation(X: int, Y: int) -> list:
+def sendLocation(X: int, Y: int, state: int) -> list:
 
 	s = socket(AF_INET, SOCK_STREAM)
 	s.connect(('127.0.0.1', 3117))
 
-	loc = f'{str(X)}-{str(Y)}'
+	loc = f'{state}-{str(X)}-{str(Y)}'
 	s.send(loc.encode())
 	loc = s.recv(1024).decode()
  
