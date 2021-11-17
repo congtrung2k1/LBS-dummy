@@ -7,35 +7,37 @@
 =================================================================
 """
 
-import os
-import sys
-
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 #from Shape.classShape import Shape
 
-from firstFilter import firstFilter
-from secondFilter import secondFilter
-from thirdFilter import thirdFilter
+from .firstFilter import firstFilter
+from .secondFilter import secondFilter
+from .thirdFilter import thirdFilter
+from .fourthFilter import fourthFilter
 
 
 def locationFilter(ggmap: object) -> list:	# [dummyX, dummyY]
 	firstFilter(ggmap)
 	secondFilter(ggmap)
 	thirdFilter(ggmap)
+	fourthFilter(ggmap)
 
 	listUse = []
-	if len(ggmap.thirdList) != 0:
+	if len(ggmap.fourthList) != 0:
+		listUse = ggmap.fourthList
+	elif len(ggmap.thirdList) != 0:
 		listUse = ggmap.thirdList
 	elif len(ggmap.secondList) != 0:
 		listUse = ggmap.secondList
 	else:
 		listUse = ggmap.firstList
 
+	ggmap.preDummyX = ggmap.dummyX
+	ggmap.preDummyY = ggmap.dummyY
 	ggmap.dummyX = listUse[0][0]
 	ggmap.dummyY = listUse[0][1]
 
-	return [ggmap.dummyX, ggmap.dummyY]
+	return listUse[0]
 
 
 

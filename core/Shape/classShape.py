@@ -3,8 +3,6 @@
 |	Class hold information of all table, calculating all shape
 |	
 |	Shape(userX: int, userY: int, level: int = 3)
-|	initTable(self) -> None
-|	calcAllShape(self) -> None
 |	getShape(self, x: int, y: int, level: int = 3) -> dict
 |	placeUserShape(self) -> None
 |	changeLevel(self, level: int) -> bool
@@ -35,14 +33,18 @@ class Shape():
 		self.userShapeBotX, self.userShapeBotY = 0, 0
 
 		# Dummy location
-		self.dummyX = 1
-		self.dummyY = 1
+		self.dummyX = -1
+		self.dummyY = -1
+		self.prevDummyX = -1
+		self.prevDummyY = -1
+
 
 		# Shape Filter
 		self.userElementObject = {}
 		self.firstList = [] 
 		self.secondList = []
 		self.thirdList = []
+		self.fourthList = []
 
 		# Saved state
 		# [ [X,Y], [dummyX,dummyY], level, [userShapeBotX, userShapeBotY] ]
@@ -109,10 +111,10 @@ class Shape():
 		while 1:
 			# random choice a cell in remaining choice
 			import random
-			r = tmp[random.randint(0, c - 1)]
+			r = tmp[random.randint(0, len(tmp) - 1)]
 
-			a = r // self.level 		# get x of row in user shape
-			b = r % self.level 			# get y of column in user shape
+			a = r // self.level	    # get x of row in user shape
+			b = r % self.level	    # get y of column in user shape
 
 			# Check if the shape is in the table
 			if 0 < self.userX - a and self.userX + (self.level - 1 - a) < self.maxN \
