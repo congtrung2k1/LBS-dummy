@@ -2,7 +2,7 @@
 =====================================================
 |	TCP of user send location to server and receive dummy location
 |
-|	sendLocation(X: int, Y: int) -> list
+|	sendLocation(X: int, Y: int) -> list    # or Str
 |
 =====================================================
 """
@@ -10,15 +10,18 @@
 
 from socket import *
 
-def sendLocation(X: int, Y: int, state: int) -> list:
+def sendLocation(state: int, X: int, Y: int, level: int) -> list:   # or Str
 
-	s = socket(AF_INET, SOCK_STREAM)
-	s.connect(('127.0.0.1', 3117))
+        s = socket(AF_INET, SOCK_STREAM)
+        s.connect(('127.0.0.1', 3117))
 
-	loc = f'{state}-{str(X)}-{str(Y)}'
-	s.send(loc.encode())
-	loc = s.recv(1024).decode()
- 
-	s.close()
+        loc = f'{state}-{str(X)}-{str(Y)}-{level}'
+        s.send(loc.encode())
+        loc = s.recv(1024).decode()
 
-	return [int(loc.split('-')[0]), int(loc.split('-')[1])]
+        s.close()
+
+        if loc == '-1--1':
+            return "Sorry\nSomethings went wrong.\nPlease restart!"
+
+        return [int(loc.split('-')[0]), int(loc.split('-')[1])]

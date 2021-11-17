@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 5.0.2, 2021-11-16T11:42:57. -->
+<!-- Written by QtCreator 5.0.3, 2021-11-18T03:05:04. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
-  <value type="QByteArray">{9865d47f-a94d-4e82-b50c-00805db1dce5}</value>
+  <value type="QByteArray">{363e8a20-5f00-4a53-8e4b-f9316a5a3b87}</value>
  </data>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -91,9 +91,9 @@
   <variable>ProjectExplorer.Project.Target.0</variable>
   <valuemap type="QVariantMap">
    <value type="QString" key="DeviceType">Desktop</value>
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Desktop Qt 6.2.0 MinGW 64-bit</value>
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Desktop Qt 6.2.0 MinGW 64-bit</value>
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">qt.qt6.620.win64_mingw81_kit</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Desktop</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Desktop</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">{9f36ea9a-1d97-4752-81d6-5e60f69714aa}</value>
    <value type="int" key="ProjectExplorer.Target.ActiveBuildConfiguration">-1</value>
    <value type="int" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
@@ -118,16 +118,16 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">D:/CODE/Python/FCDS_Proj/User_UI/main.py</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/CODE/Python/FCDS_Proj/User_UI/main.py</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/CODE/Python/FCDS_Proj/User_UI/main.py</value>
-    <value type="QString" key="PythonEditor.RunConfiguation.Interpreter">{2f2788a4-d195-4adb-9fb5-a0b52a9b6980}</value>
-    <value type="QString" key="PythonEditor.RunConfiguation.Script">D:\CODE\Python\FCDS_Proj\User_UI\main.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">C:/Users/darkn/Documents/GitHub/LBS-dummy/User_UI/main.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.C:/Users/darkn/Documents/GitHub/LBS-dummy/User_UI/main.py</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/Users/darkn/Documents/GitHub/LBS-dummy/User_UI/main.py</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Interpreter">{b3875932-6833-4fbc-bf2d-0be33161ac58}</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Script">C:\Users\darkn\Documents\GitHub\LBS-dummy\User_UI\main.py</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/CODE/Python/FCDS_Proj/User_UI</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">C:/Users/darkn/Documents/GitHub/LBS-dummy/User_UI</value>
    </valuemap>
    <value type="int" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
   </valuemap>

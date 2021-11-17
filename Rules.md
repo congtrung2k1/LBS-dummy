@@ -1,5 +1,6 @@
 * Function in python must have type of argument, and the type of return
 	> Name of Function must in camel casing.
+	> Type of return maybe specific in some case.
 	
 * Table : 2D array -> list
 	> maxN = 100

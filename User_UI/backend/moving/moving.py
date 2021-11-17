@@ -1,3 +1,12 @@
+"""
+=====================================================
+|	Get next random location for user
+|
+|	movingLocation(coor: list) -> list
+|
+=====================================================
+"""
+
 import random
 
 def checkCollision(x: int, y: int):
