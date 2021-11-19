@@ -14,6 +14,8 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from Object.operatorObject import percentObject
 
 def fourthFilter(ggmap: object) -> None:
+        ggmap.fourthList.clear()
+
         if ggmap.prevDummyX == -1:
                 ggmap.fourthList = ggmap.thirdList
                 return None
