@@ -52,6 +52,11 @@ class MainWindow(QObject):
         self.getMovingLocation.emit(f"User Location \n(X, Y) = {self.userLocation}")
         return None
 
+    @Slot(int)
+    def callChangePriv(self, level: int) -> None:
+        self.level = level
+        return None
+
 
 if __name__ == "__main__":
     os.chdir(os.path.dirname(os.path.abspath(__file__)))

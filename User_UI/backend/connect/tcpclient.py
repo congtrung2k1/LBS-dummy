@@ -13,7 +13,10 @@ from socket import *
 def sendLocation(state: int, X: int, Y: int, level: int) -> list:   # or Str
 
         s = socket(AF_INET, SOCK_STREAM)
-        s.connect(('127.0.0.1', 3117))
+        try:
+            s.connect(('127.0.0.1', 3117))
+        except:
+            return "Sorry\nSomethings went wrong.\nPlease restart!"
 
         loc = f'{state}-{str(X)}-{str(Y)}-{level}'
         s.send(loc.encode())

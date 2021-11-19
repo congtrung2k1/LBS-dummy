@@ -134,6 +134,115 @@ Item {
                     }
                 }
             }
+
+            Switch {
+                id: button3
+                x: 45
+                y: 600
+                width: 68
+                height: 31
+                text: qsTr("3")
+                display: AbstractButton.IconOnly
+                checked: true
+                wheelEnabled: false
+                font.pointSize: 13
+                onClicked: {
+                    if (button3.checked == true){
+                        button4.checked = false
+                        button5.checked = false
+                        backend.callChangePriv(3)
+                        if (randlocation.text != ""){
+                            console.log("OK3")
+                            backend.callDummyLocation(2)
+                        }
+                    }
+                    else{
+                        button3.checked = true
+                    }
+                }
+            }
+
+            Switch {
+                id: button4
+                x: 134
+                y: 600
+                width: 65
+                height: 31
+                text: qsTr("4")
+                display: AbstractButton.IconOnly
+                font.pointSize: 13
+                wheelEnabled: false
+                onClicked: {
+                    if (button4.checked == true){
+                        button3.checked = false
+                        button5.checked = false
+                        backend.callChangePriv(4)
+                        if (randlocation.text != ""){
+                            console.log("OK4")
+                            backend.callDummyLocation(2)
+                        }
+                    }
+                    else{
+                        button4.checked = true
+                    }
+                }
+            }
+
+            Switch {
+                id: button5
+                x: 221
+                y: 600
+                width: 65
+                height: 31
+                text: qsTr("5")
+                display: AbstractButton.IconOnly
+                font.pointSize: 13
+                wheelEnabled: false
+                onClicked: {
+                    if (button5.checked == true){
+                        button3.checked = false
+                        button4.checked = false
+                        backend.callChangePriv(5)
+                        if (randlocation.text != ""){
+                            console.log("OK5")
+                            backend.callDummyLocation(2)
+                        }
+                    }
+                    else{
+                        button5.checked = true
+                    }
+                }
+            }
+
+            Text {
+                id: text1
+                x: 74
+                y: 570
+                color: "#27ff00"
+                text: qsTr("3")
+                font.pixelSize: 20
+                font.bold: true
+            }
+
+            Text {
+                id: text2
+                x: 160
+                y: 570
+                color: "#27ff00"
+                text: qsTr("4")
+                font.pixelSize: 20
+                font.bold: true
+            }
+
+            Text {
+                id: text3
+                x: 247
+                y: 570
+                color: "#27ff00"
+                text: qsTr("5")
+                font.pixelSize: 20
+                font.bold: true
+            }
         }
     }
 

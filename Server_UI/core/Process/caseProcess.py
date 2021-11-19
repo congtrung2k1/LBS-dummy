@@ -76,17 +76,17 @@ def addingToMemory(ggmap: object) -> None:
 
 
 # Receive information
-def pipeIn(ggmap: object, state: int, x: int, y: int, lvl: int = 3) -> list:
+def pipeIn(ggmap: object, state: int, x: int, y: int, level: int = 3) -> list:
     if state == 0:
-        return newDummyLocation(x, y, lvl)
+        return newDummyLocation(x, y, level)
     elif state == 1:
         if ggmap != None:
             return nextDummyLocation(ggmap, x, y)
         else:
             return [-1, -1]
-    else:
+    elif state == 2:
         if ggmap != None:
-            return changePrivacyLevel(ggmap, lvl)
+            return changePrivacyLevel(ggmap, level)
         else:
             return [-1, -1]
 

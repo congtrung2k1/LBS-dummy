@@ -1,8 +1,8 @@
 """
 =================================================================
-|	Second filter, get all the shape which have +-6% of object like userShape
+|    Second filter, get all the shape which have +-6% of object like userShape
 |
-|	secondFilter(ggmap: object) -> None:
+|    secondFilter(ggmap: object) -> None:
 |
 =================================================================
 """
@@ -15,16 +15,18 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from Object.operatorObject import percentObject
 
 def secondFilter(ggmap: object) -> None:
-	temp = percentObject(ggmap.userShape)
+    temp = percentObject(ggmap.userShape)
 
-	for loc in ggmap.firstList:
-		tmp = ggmap.getShape(loc[0], loc[1], ggmap.level)
-		tmpPer = percentObject(tmp)
+    ggmap.secondList.clear()
 
-		check = 1
-		for key in temp:
-			if abs(tmpPer[key] - temp[key]) > 0.060:
-				check = 0
-				break
-		if check:
-			ggmap.secondList.append(loc)
+    for loc in ggmap.firstList:
+        tmp = ggmap.getShape(loc[0], loc[1], ggmap.level)
+        tmpPer = percentObject(tmp)
+
+        check = 1
+        for key in temp:
+            if abs(tmpPer[key] - temp[key]) > 0.060:
+                check = 0
+                break
+        if check:
+            ggmap.secondList.append(loc)

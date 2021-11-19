@@ -16,6 +16,7 @@ from Object.operatorObject import percentObject
 
 def thirdFilter(ggmap: object) -> None:
         tmpThirdlist = []
+        ggmap.thirdList.clear()
 
         tempUser = percentObject(ggmap.userShape)
 
