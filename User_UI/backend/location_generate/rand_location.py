@@ -1,3 +1,12 @@
+"""
+=====================================================
+|	Get random location for user
+|
+|	random_location() -> list
+|
+=====================================================
+"""
+
 import random
 
 def random_location() -> list:
