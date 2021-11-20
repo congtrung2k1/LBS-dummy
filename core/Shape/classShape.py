@@ -29,6 +29,7 @@ class Shape():
         self.userX = userX
         self.userY = userY
         self.level = level
+        self.lastl = level
         self.userShape = {}
         self.userShapeBotX, self.userShapeBotY = 0, 0
 
@@ -75,6 +76,9 @@ class Shape():
 
     # Calculate all shape inside table
     def calcAllShape(self) -> None:
+
+        # [i,j] = [i,j] + [i - 1, j] + [i, j - 1] - [i - 1, j - 1]
+
         for i in range(1, self.maxN):
             for j in range(1, self.maxM):
                 tmp = self.table[i][j]
@@ -131,6 +135,7 @@ class Shape():
 
     # Privacy level of user change
     def changeLevel(self, level: int) -> bool:
+        self.lastl = self.level
         self.level = level
 
         for pair in self.memorized:
@@ -156,7 +161,6 @@ class Shape():
                         return True
 
         # if the position does not have any data in database, create new
-        self.placeUserShape()
         return False
 
 
