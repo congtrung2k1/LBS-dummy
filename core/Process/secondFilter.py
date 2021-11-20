@@ -16,7 +16,6 @@ from Object.operatorObject import percentObject
 
 def secondFilter(ggmap: object) -> None:
     temp = percentObject(ggmap.userShape)
-
     ggmap.secondList.clear()
 
     for loc in ggmap.firstList:
