@@ -29,7 +29,7 @@ class Shape():
         self.userX = userX
         self.userY = userY
         self.level = level
-        self.userShape = {}
+        self.userShape = []
         self.userShapeBotX, self.userShapeBotY = 0, 0
 
         # Dummy location
@@ -75,6 +75,9 @@ class Shape():
 
     # Calculate all shape inside table
     def calcAllShape(self) -> None:
+
+        # [i,j] = [i,j] + [i - 1, j] + [i, j - 1] - [i - 1, j - 1]
+
         for i in range(1, self.maxN):
             for j in range(1, self.maxM):
                 tmp = self.table[i][j]

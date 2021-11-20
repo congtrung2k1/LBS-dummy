@@ -31,6 +31,6 @@ def fourthFilter(ggmap: object) -> None:
                         ggmap.fourthList = ggmap.thirdList[i]
 
         #print(tmpRange)
-        #print(ggmap.fourList)
+        #print(ggmap.fourthList)
 
         return None

@@ -152,7 +152,6 @@ Item {
                         button5.checked = false
                         backend.callChangePriv(3)
                         if (randlocation.text != ""){
-                            console.log("OK3")
                             backend.callDummyLocation(2)
                         }
                     }
@@ -178,7 +177,6 @@ Item {
                         button5.checked = false
                         backend.callChangePriv(4)
                         if (randlocation.text != ""){
-                            console.log("OK4")
                             backend.callDummyLocation(2)
                         }
                     }
@@ -204,7 +202,6 @@ Item {
                         button4.checked = false
                         backend.callChangePriv(5)
                         if (randlocation.text != ""){
-                            console.log("OK5")
                             backend.callDummyLocation(2)
                         }
                     }
