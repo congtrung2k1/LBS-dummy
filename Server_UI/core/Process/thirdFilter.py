@@ -12,7 +12,7 @@ import sys
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from core.Object.operatorObject import percentObject
+from Object.operatorObject import percentObject
 
 def thirdFilter(ggmap: object) -> None:
         tmpThirdlist = []
@@ -23,7 +23,7 @@ def thirdFilter(ggmap: object) -> None:
         for loc in ggmap.secondList:
                 x = abs(ggmap.userX - loc[0])
                 y = abs(ggmap.userY - loc[1])
-                if x**2 + y**2 < 70:
+                if x**x + y**y < 70:
                     continue
 
                 tmp = ggmap.getShape(loc[0], loc[1], ggmap.level)
@@ -34,7 +34,7 @@ def thirdFilter(ggmap: object) -> None:
                         total += abs(tmpPer[key] - tempUser[key])
                 tmpThirdlist.append([total, loc])
 
-        tmpThirdlist = sorted(tmpThirdlist, key=lambda x: x[0])
+        tmpThirdlist = sorted(tmpThirdlist, key= lambda x:x[0])
         ggmap.thirdList = [i[1] for i in tmpThirdlist]
 
         #print(tmpThirdlist)

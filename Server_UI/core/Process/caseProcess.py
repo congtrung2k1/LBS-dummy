@@ -14,7 +14,6 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from Shape.classShape import Shape
 from core.Process.locationFilter import locationFilter
-from core.Process.privacyFilter import privacyCheck
 
 # When phone reboot, this will reset the map
 # Return dummy location
@@ -65,14 +64,7 @@ def changePrivacyLevel(ggmap: object, level: int = 4) -> list:     # [dummyX, du
     if existed:
         return [ggmap.dummyX, ggmap.dummyY]
 
-    checkSuitable = privacyCheck(ggmap)
-
-    if not checkSuitable:
-        ggmap.placeUserShape()
-        loc = locationFilter(ggmap)
-    else:
-        loc = [ggmap.dummyX, ggmap.dummyY]
-
+    loc = locationFilter(ggmap)
     addingToMemory(ggmap)
     return loc
 
