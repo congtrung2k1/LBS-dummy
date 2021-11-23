@@ -12,7 +12,7 @@ Window {
     title: "Project"
 
     //Remove title bar
-    flags: Qt.SplashScreen | Qt.FramelessWindowHint
+    flags: Qt.Window | Qt.FramelessWindowHint
 
 
     //
