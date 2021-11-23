@@ -28,6 +28,12 @@ Window {
         anchors.bottomMargin: 10
         anchors.topMargin: 10
 
+        DragHandler {
+            onActiveChanged: if(active) {
+                             user_UI.startSystemMove()
+                             }
+        }
+
         Rectangle {
             id: content
             color: "#00000000"
