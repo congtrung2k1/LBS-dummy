@@ -66,13 +66,13 @@ def changePrivacyLevel(ggmap: object, level: int = 4) -> list:     # [dummyX, du
         return [ggmap.dummyX, ggmap.dummyY]
 
     ggmap.placeUserShape()
-    
+
     checkSuitable = privacyCheck(ggmap)
     if not checkSuitable:
         loc = locationFilter(ggmap)
     else:
         loc = [ggmap.dummyX, ggmap.dummyY]
-        
+
     addingToMemory(ggmap)
     return loc
 
