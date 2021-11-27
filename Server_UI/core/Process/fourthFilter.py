@@ -27,7 +27,7 @@ def fourthFilter(ggmap: object) -> None:
                 x = abs(ggmap.thirdList[i][0] - ggmap.prevDummyX)
                 y = abs(ggmap.thirdList[i][1] - ggmap.prevDummyY)
                 if x**2 + y**2 < tmpRange:
-                        tmpRange = x**x + y**y
+                        tmpRange = x**2 + y**2
                         ggmap.fourthList = ggmap.thirdList[i]
 
         #print(tmpRange)
