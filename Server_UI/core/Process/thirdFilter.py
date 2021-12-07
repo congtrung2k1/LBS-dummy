@@ -37,5 +37,7 @@ def thirdFilter(ggmap: object) -> None:
         tmpThirdlist = sorted(tmpThirdlist, key=lambda x: x[0])
         ggmap.thirdList = [i[1] for i in tmpThirdlist]
 
-        #print(tmpThirdlist)
+        #print('\n', len(tmpThirdList))
+        #for i in tmpThirdlist:
+        #    print(i)
         #print(ggmap.thirdList)

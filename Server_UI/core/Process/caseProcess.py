@@ -30,6 +30,11 @@ def newDummyLocation(x: int, y: int, lvl: int = 3) -> list: 	# [dummyX, dummyY]
 def nextDummyLocation(ggmap: object, x: int, y: int = 3) -> list: 	# [dummyX, dummyY]
     ggmap.changeUserLocation(x, y)
 
+    lvl, tmpx, tmpy = ggmap.level, ggmap.userShapeBotX, ggmap.userShapeBotY
+
+    if tmpx - lvl + 1 <= x <= tmpx and tmpy - lvl + 1 <= y <= tmpy:
+        return [ggmap.dummyX, ggmap.dummyY]
+
     for pair in ggmap.memorized:
         if pair[2] == ggmap.level:
             if pair[0] == [ggmap.userX, ggmap.userY]:
