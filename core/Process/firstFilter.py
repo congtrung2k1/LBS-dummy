@@ -30,3 +30,7 @@ def firstFilter(ggmap: object) -> None:
 
                 if check:
                     ggmap.firstList.append([i,j])
+
+    #print('\n', len(ggmap.firstList)
+    #for i in ggmap.firstList:
+    #    print(i)

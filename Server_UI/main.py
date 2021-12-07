@@ -57,7 +57,7 @@ class TCPThread(QThread):
             ssub, addr = s.accept()
             loc = ssub.recv(1024).decode()
 
-            #print(f'Receiving {loc} from {addr[0]}:{addr[1]}')
+            print(f'\nReceiving {loc} from {addr[0]}:{addr[1]}')
 
             state = int(loc.split('-')[0])
             x = int(loc.split('-')[1])

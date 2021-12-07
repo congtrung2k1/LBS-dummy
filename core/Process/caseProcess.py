@@ -30,6 +30,14 @@ def newDummyLocation(x: int, y: int, lvl: int = 3) -> list: 	# [dummyX, dummyY]
 def nextDummyLocation(ggmap: object, x: int, y: int = 3) -> list: 	# [dummyX, dummyY]
     ggmap.changeUserLocation(x, y)
 
+    ggmap.prevDummyX = ggmap.dummyX
+    ggmap.prevDummyY = ggmap.dummyY
+
+    lvl, tmpx, tmpy = ggmap.level, ggmap.userShapeBotX, ggmap.userShapeBotY
+
+    if tmpx - lvl + 1 <= x <= tmpx and tmpy - lvl + 1 <= y <= tmpy:
+        return [ggmap.dummyX, ggmap.dummyY]
+
     for pair in ggmap.memorized:
         if pair[2] == ggmap.level:
             if pair[0] == [ggmap.userX, ggmap.userY]:
@@ -60,15 +68,18 @@ def nextDummyLocation(ggmap: object, x: int, y: int = 3) -> list: 	# [dummyX, du
 # This occurs when user change privacy level
 # Check is that situation is occursed
 def changePrivacyLevel(ggmap: object, level: int = 4) -> list:     # [dummyX, dummyY]
+    ggmap.prevDummyX = ggmap.dummyX
+    ggmap.prevDummyY = ggmap.dummyY
+
     existed = ggmap.changeLevel(level)
 
     if existed:
         return [ggmap.dummyX, ggmap.dummyY]
 
-    ggmap.placeUserShape()
-
     checkSuitable = privacyCheck(ggmap)
+
     if not checkSuitable:
+        ggmap.placeUserShape()
         loc = locationFilter(ggmap)
     else:
         loc = [ggmap.dummyX, ggmap.dummyY]

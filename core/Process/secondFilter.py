@@ -29,3 +29,7 @@ def secondFilter(ggmap: object) -> None:
                 break
         if check:
             ggmap.secondList.append(loc)
+
+    #print('\n', len(ggmap.secondList)
+    #for i in ggmap.secondList:
+    #    print(i)

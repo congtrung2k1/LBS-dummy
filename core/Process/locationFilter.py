@@ -18,9 +18,13 @@ from .fourthFilter import fourthFilter
 
 def locationFilter(ggmap: object) -> list:    # [dummyX, dummyY]
     firstFilter(ggmap)
+    print('\nFirst list', ggmap.userX, ggmap.userY, '\n', len(ggmap.firstList), ggmap.firstList)
     secondFilter(ggmap)
+    print('\nSecond list', ggmap.userX, ggmap.userY, '\n', len(ggmap.secondList), ggmap.secondList)
     thirdFilter(ggmap)
+    print('\nThird list', ggmap.userX, ggmap.userY, '\n', len(ggmap.thirdList), ggmap.thirdList)
     fourthFilter(ggmap)
+    print('\nFourth list', ggmap.userX, ggmap.userY, '\n', ggmap.fourthList)
 
     listUse = []
     if len(ggmap.fourthList) != 0:
@@ -32,8 +36,6 @@ def locationFilter(ggmap: object) -> list:    # [dummyX, dummyY]
     else:
         listUse = ggmap.firstList
 
-    ggmap.preDummyX = ggmap.dummyX
-    ggmap.preDummyY = ggmap.dummyY
     ggmap.dummyX = listUse[0][0]
     ggmap.dummyY = listUse[0][1]
 

@@ -98,12 +98,15 @@ def privacyCheck(ggmap: object) -> bool:
                     check = 0
                     break
             if check:
-                tmpPrivList.append([total, loc])
+                tmpPrivList.append([total, loc, each])
             else:
                 continue
 
     tmpPrivList = sorted(tmpPrivList, key=lambda x: x[0])
     if len(tmpPrivList) != 0:
+        ggmap.userShapeBotX = tmpPrivList[0][2][0]
+        ggmap.userShapeBotY = tmpPrivList[0][2][1]
+        ggmap.userShape = ggmap.getShape(ggmap.userShapeBotX, ggmap.userShapeBotY, ggmap.level)
         ggmap.dummyX = tmpPrivList[0][1][0]
         ggmap.dummyY = tmpPrivList[0][1][1]
         return True

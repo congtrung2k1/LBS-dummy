@@ -16,6 +16,9 @@ from Object.operatorObject import percentObject
 def fourthFilter(ggmap: object) -> None:
         ggmap.fourthList.clear()
 
+        ggmap.prevDummyX = ggmap.dummyX
+        ggmap.prevDummyY = ggmap.dummyY
+
         if ggmap.prevDummyX == -1:
                 ggmap.fourthList = ggmap.thirdList
                 return None
@@ -27,8 +30,12 @@ def fourthFilter(ggmap: object) -> None:
                 x = abs(ggmap.thirdList[i][0] - ggmap.prevDummyX)
                 y = abs(ggmap.thirdList[i][1] - ggmap.prevDummyY)
                 if x**2 + y**2 < tmpRange:
-                        tmpRange = x**x + y**y
-                        ggmap.fourthList = ggmap.thirdList[i]
+                        tmpRange = x**2 + y**2
+                        temp = []
+                        temp.append(ggmap.thirdList[i])
+                        ggmap.fourthList = temp
+
+
 
         #print(tmpRange)
         #print(ggmap.fourthList)
